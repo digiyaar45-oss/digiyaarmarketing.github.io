@@ -168,12 +168,61 @@
             height: 100%;
             display: flex;
             flex-direction: column;
+            position: relative;
         }
 
         .blog-card:hover {
             transform: translateY(-5px);
             box-shadow: var(--shadow);
             border-color: var(--primary-color);
+        }
+
+        /* Admin Action Buttons */
+        .blog-admin-actions {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: flex;
+            gap: 8px;
+            z-index: 10;
+        }
+
+        .blog-edit-btn,
+        .blog-delete-btn {
+            width: 38px;
+            height: 38px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .blog-edit-btn {
+            background: rgba(37, 99, 235, 0.9);
+            color: white;
+        }
+
+        .blog-edit-btn:hover {
+            background: rgba(37, 99, 235, 1);
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+        }
+
+        .blog-delete-btn {
+            background: rgba(220, 38, 38, 0.9);
+            color: white;
+        }
+
+        .blog-delete-btn:hover {
+            background: rgba(220, 38, 38, 1);
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(220, 38, 38, 0.4);
         }
 
         .blog-image {
@@ -581,9 +630,10 @@
     </div>
 
     <script>
-        // ADMIN PASSWORD - Aap yeh change kar sakte hain
+        // ADMIN PASSWORD - Hidden for security (change in source code only)
         const ADMIN_PASSWORD = 'digiyaar2026';
         let isAdminLoggedIn = false;
+        let editingBlogId = null;
 
         // Load blogs on page load
         document.addEventListener('DOMContentLoaded', loadBlogs);
@@ -604,6 +654,7 @@
             document.getElementById('blogForm').reset();
             document.getElementById('loginError').style.display = 'none';
             document.getElementById('successMessage').style.display = 'none';
+            editingBlogId = null; // Clear editing state
         }
 
         function handleLogin(event) {
@@ -617,6 +668,7 @@
                 document.getElementById('blogFormSection').style.display = 'block';
                 document.getElementById('adminPassword').value = '';
                 errorDiv.style.display = 'none';
+                loadBlogs(); // Reload blogs to show edit/delete buttons
             } else {
                 errorDiv.textContent = '❌ Incorrect password!';
                 errorDiv.style.display = 'block';
@@ -625,6 +677,8 @@
 
         function logout() {
             isAdminLoggedIn = false;
+            editingBlogId = null;
+            loadBlogs(); // Reload blogs to hide edit/delete buttons
             closeAdminPanel();
         }
 
@@ -632,7 +686,7 @@
             event.preventDefault();
 
             const blog = {
-                id: Date.now().toString(),
+                id: editingBlogId || Date.now().toString(),
                 title: document.getElementById('blogTitle').value,
                 icon: document.getElementById('blogIcon').value,
                 category: document.getElementById('blogCategory').value,
@@ -640,19 +694,31 @@
                 content: document.getElementById('blogContent').value,
                 author: document.getElementById('blogAuthor').value,
                 readTime: document.getElementById('blogReadTime').value,
-                date: new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })
+                date: editingBlogId ? getExistingDate(editingBlogId) : new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })
             };
 
             try {
                 let blogs = JSON.parse(localStorage.getItem('digiyaar_blogs') || '[]');
-                blogs.unshift(blog);
+                
+                if (editingBlogId) {
+                    // Update existing blog
+                    const index = blogs.findIndex(b => b.id === editingBlogId);
+                    if (index !== -1) {
+                        blogs[index] = blog;
+                    }
+                } else {
+                    // Add new blog
+                    blogs.unshift(blog);
+                }
+                
                 localStorage.setItem('digiyaar_blogs', JSON.stringify(blogs));
 
                 const successDiv = document.getElementById('successMessage');
-                successDiv.textContent = '✅ Blog successfully published!';
+                successDiv.textContent = editingBlogId ? '✅ Blog successfully updated!' : '✅ Blog successfully published!';
                 successDiv.style.display = 'block';
 
                 document.getElementById('blogForm').reset();
+                editingBlogId = null;
                 
                 setTimeout(() => {
                     closeAdminPanel();
@@ -660,6 +726,63 @@
                 }, 1500);
             } catch (error) {
                 alert('Error: ' + error.message);
+            }
+        }
+
+        function getExistingDate(blogId) {
+            const blogs = JSON.parse(localStorage.getItem('digiyaar_blogs') || '[]');
+            const blog = blogs.find(b => b.id === blogId);
+            return blog ? blog.date : new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+        }
+
+        function editBlog(blogId) {
+            event.stopPropagation();
+            
+            if (!isAdminLoggedIn) {
+                alert('❌ Please login first to edit blogs!');
+                showAdminPanel();
+                return;
+            }
+
+            const blogs = JSON.parse(localStorage.getItem('digiyaar_blogs') || '[]');
+            const blog = blogs.find(b => b.id === blogId);
+            
+            if (blog) {
+                editingBlogId = blogId;
+                
+                document.getElementById('blogTitle').value = blog.title;
+                document.getElementById('blogIcon').value = blog.icon;
+                document.getElementById('blogCategory').value = blog.category;
+                document.getElementById('blogExcerpt').value = blog.excerpt;
+                document.getElementById('blogContent').value = blog.content;
+                document.getElementById('blogAuthor').value = blog.author;
+                document.getElementById('blogReadTime').value = blog.readTime;
+                
+                showAdminPanel();
+                document.getElementById('loginSection').style.display = 'none';
+                document.getElementById('blogFormSection').style.display = 'block';
+            }
+        }
+
+        function deleteBlog(blogId) {
+            event.stopPropagation();
+            
+            if (!isAdminLoggedIn) {
+                alert('❌ Please login first to delete blogs!');
+                showAdminPanel();
+                return;
+            }
+
+            if (confirm('⚠️ Are you sure you want to delete this blog? This action cannot be undone!')) {
+                try {
+                    let blogs = JSON.parse(localStorage.getItem('digiyaar_blogs') || '[]');
+                    blogs = blogs.filter(b => b.id !== blogId);
+                    localStorage.setItem('digiyaar_blogs', JSON.stringify(blogs));
+                    loadBlogs();
+                    alert('✅ Blog deleted successfully!');
+                } catch (error) {
+                    alert('Error deleting blog: ' + error.message);
+                }
             }
         }
 
@@ -678,6 +801,16 @@
                 emptyState.style.display = 'none';
                 blogGrid.innerHTML = blogs.map(blog => `
                     <div class='blog-card' onclick='viewBlog("${blog.id}")'>
+                        ${isAdminLoggedIn ? `
+                        <div class='blog-admin-actions'>
+                            <button class='blog-edit-btn' onclick='editBlog("${blog.id}")' title='Edit Blog'>
+                                <i class='fas fa-edit'></i>
+                            </button>
+                            <button class='blog-delete-btn' onclick='deleteBlog("${blog.id}")' title='Delete Blog'>
+                                <i class='fas fa-trash'></i>
+                            </button>
+                        </div>
+                        ` : ''}
                         <div class='blog-image'>
                             <i class='fas ${blog.icon}'></i>
                         </div>
