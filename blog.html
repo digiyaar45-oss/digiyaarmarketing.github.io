@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'/>
+    <meta content='width=device-width, initial-scale=1.0' name='viewport'/>
+    <title>Blog - Digital Marketing Insights | Digiyaar</title>
+    <link rel="icon" type="image/png" href="https://drive.google.com/uc?export=view&id=1O_DhJduNw0t9q0xrOxqyHRpz8R9UGuQA"/>
+    <meta name="description" content="Read the latest digital marketing insights, SEO tips, and industry trends from Digiyaar's expert team."/>
+    <meta name="keywords" content="Digital Marketing Blog, SEO Tips, Marketing Insights, Pakistan Marketing, Digiyaar Blog"/>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css' rel='stylesheet'/>
+    <link href='https://fonts.googleapis.com' rel='preconnect'/>
+    <link crossorigin='anonymous' href='https://fonts.gstatic.com' rel='preconnect'/>
+    <link href='https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap' rel='stylesheet'/>
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #1a1a1a;
+            --card-bg: rgba(245, 245, 245, 0.95);
+            --primary-color: #dc2626;
+            --primary-light: #ef4444;
+            --secondary-color: #4b5563;
+            --accent-color: #2563eb;
+            --shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            --glass-border: rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --gradient: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(220, 38, 38, 0.05) 0%, transparent 25%),
+                radial-gradient(circle at 90% 80%, rgba(37, 99, 235, 0.05) 0%, transparent 25%);
+            z-index: -1;
+        }
+
+        /* Header */
+        .blog-header {
+            background: var(--card-bg);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid var(--glass-border);
+            padding: 20px 5%;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .logo span {
+            color: var(--text-color);
+        }
+
+        .header-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            background: var(--gradient);
+            color: white;
+            text-decoration: none;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(220, 38, 38, 0.3);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 5% 60px;
+        }
+
+        /* Hero Section */
+        .blog-hero {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .blog-hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--text-color) 0%, var(--primary-color) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .blog-hero p {
+            font-size: 1.2rem;
+            color: var(--secondary-color);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Blog Grid */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .blog-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+            transition: var(--transition);
+            cursor: pointer;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+            border-color: var(--primary-color);
+        }
+
+        .blog-image {
+            width: 100%;
+            height: 180px;
+            background: linear-gradient(135deg, rgba(220, 38, 38, 0.1) 0%, rgba(37, 99, 235, 0.1) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.5rem;
+            color: var(--primary-color);
+        }
+
+        .blog-content {
+            padding: 25px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-meta {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            font-size: 0.85rem;
+            color: var(--secondary-color);
+            flex-wrap: wrap;
+        }
+
+        .blog-meta span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .blog-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--text-color);
+            line-height: 1.3;
+        }
+
+        .blog-excerpt {
+            color: var(--secondary-color);
+            line-height: 1.6;
+            margin-bottom: 15px;
+            flex: 1;
+        }
+
+        .read-more {
+            color: var(--primary-color);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            margin-top: auto;
+        }
+
+        /* Admin Panel */
+        .admin-panel {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            overflow-y: auto;
+            padding: 20px;
+        }
+
+        .admin-panel.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .admin-content {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 700px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .close-admin {
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--secondary-color);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--text-color);
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid var(--glass-border);
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        /* Empty State */
+        .empty-state {
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .empty-state i {
+            font-size: 5rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+
+        .empty-state h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .empty-state p {
+            color: var(--secondary-color);
+        }
+
+        /* Login Form */
+        .error-message {
+            background: #fee2e2;
+            color: #dc2626;
+            padding: 10px 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            display: none;
+        }
+
+        .success-message {
+            background: #d1fae5;
+            color: #059669;
+            padding: 10px 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            display: none;
+        }
+
+        /* Blog Detail Modal */
+        .blog-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            overflow-y: auto;
+            padding: 20px;
+        }
+
+        .blog-modal.active {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            padding-top: 50px;
+        }
+
+        .blog-modal-content {
+            background: white;
+            padding: 50px;
+            border-radius: 20px;
+            max-width: 900px;
+            width: 100%;
+            position: relative;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 2.5rem;
+            cursor: pointer;
+            color: var(--secondary-color);
+        }
+
+        .blog-modal h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--text-color);
+        }
+
+        .blog-modal-meta {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--glass-border);
+            flex-wrap: wrap;
+        }
+
+        .blog-modal-content-text {
+            line-height: 1.8;
+            font-size: 1.1rem;
+            color: var(--text-color);
+            white-space: pre-wrap;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .blog-hero h1 {
+                font-size: 2rem;
+            }
+
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .admin-content,
+            .blog-modal-content {
+                padding: 25px;
+            }
+
+            .header-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .header-buttons {
+                width: 100%;
+                justify-content: space-between;
+            }
+
+            .btn {
+                flex: 1;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class='blog-header'>
+        <div class='header-content'>
+            <a class='logo' href='index.html'>
+                Digi<span>yaar</span>
+            </a>
+            <div class="header-buttons">
+                <button class='btn btn-secondary' onclick='showAdminPanel()'>
+                    <i class='fas fa-user-shield'></i> Admin
+                </button>
+                <a class='btn' href='index.html'>
+                    <i class='fas fa-arrow-left'></i> Home
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class='container'>
+        <!-- Hero Section -->
+        <div class='blog-hero'>
+            <h1>Digital Marketing Blog</h1>
+            <p>
+                Latest insights, tips, and trends in digital marketing. Stay updated with expert advice from the Digiyaar team.
+            </p>
+        </div>
+
+        <!-- Blog Grid -->
+        <div class='blog-grid' id='blogGrid'>
+            <!-- Blogs will be loaded here -->
+        </div>
+
+        <!-- Empty State -->
+        <div class='empty-state' id='emptyState' style='display: none;'>
+            <i class='fas fa-blog'></i>
+            <h2>No Blogs Yet</h2>
+            <p>Login as admin to publish your first blog!</p>
+        </div>
+    </div>
+
+    <!-- Admin Panel -->
+    <div class='admin-panel' id='adminPanel'>
+        <div class='admin-content'>
+            <div class='admin-header'>
+                <h2>Admin Panel</h2>
+                <span class='close-admin' onclick='closeAdminPanel()'>×</span>
+            </div>
+
+            <!-- Login Form -->
+            <div id='loginSection'>
+                <form id='loginForm' onsubmit='handleLogin(event)'>
+                    <div class='error-message' id='loginError'></div>
+                    <div class='form-group'>
+                        <label>Admin Password</label>
+                        <input type='password' id='adminPassword' placeholder='Enter admin password' required>
+                    </div>
+                    <button type='submit' class='btn' style='width: 100%;'>
+                        <i class='fas fa-sign-in-alt'></i> Login
+                    </button>
+                </form>
+                <p style='margin-top: 20px; text-align: center; color: var(--secondary-color); font-size: 0.9rem;'>
+                    Default password: <strong>digiyaar2026</strong><br>
+                    <small>(Aap yeh change kar sakte hain source code mein)</small>
+                </p>
+            </div>
+
+            <!-- Blog Form -->
+            <div id='blogFormSection' style='display: none;'>
+                <div class='success-message' id='successMessage'></div>
+                <form id='blogForm' onsubmit='handleBlogSubmit(event)'>
+                    <div class='form-group'>
+                        <label>Blog Title</label>
+                        <input type='text' id='blogTitle' placeholder='Enter blog title' required>
+                    </div>
+
+                    <div class='form-group'>
+                        <label>Blog Icon (Font Awesome class)</label>
+                        <input type='text' id='blogIcon' placeholder='e.g., fa-rocket' value='fa-blog'>
+                        <small style='color: var(--secondary-color);'>Browse: <a href='https://fontawesome.com/icons' target='_blank'>FontAwesome</a></small>
+                    </div>
+
+                    <div class='form-group'>
+                        <label>Category</label>
+                        <select id='blogCategory' required>
+                            <option value='SEO'>SEO</option>
+                            <option value='Content Marketing'>Content Marketing</option>
+                            <option value='Social Media'>Social Media</option>
+                            <option value='PPC'>PPC</option>
+                            <option value='Email Marketing'>Email Marketing</option>
+                            <option value='Digital Strategy'>Digital Strategy</option>
+                            <option value='Analytics'>Analytics</option>
+                            <option value='General'>General</option>
+                        </select>
+                    </div>
+
+                    <div class='form-group'>
+                        <label>Blog Excerpt (Short Description)</label>
+                        <textarea id='blogExcerpt' placeholder='Brief summary...' rows='3' required></textarea>
+                    </div>
+
+                    <div class='form-group'>
+                        <label>Full Blog Content</label>
+                        <textarea id='blogContent' placeholder='Write your complete blog here...' required></textarea>
+                    </div>
+
+                    <div class='form-group'>
+                        <label>Author Name</label>
+                        <input type='text' id='blogAuthor' placeholder='Author name' value='Digiyaar Team' required>
+                    </div>
+
+                    <div class='form-group'>
+                        <label>Reading Time (minutes)</label>
+                        <input type='number' id='blogReadTime' placeholder='e.g., 5' value='5' min='1' required>
+                    </div>
+
+                    <button type='submit' class='btn' style='width: 100%;'>
+                        <i class='fas fa-paper-plane'></i> Publish Blog
+                    </button>
+
+                    <button type='button' class='btn btn-secondary' style='width: 100%; margin-top: 10px;' onclick='logout()'>
+                        <i class='fas fa-sign-out-alt'></i> Logout
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Blog Detail Modal -->
+    <div class='blog-modal' id='blogModal'>
+        <div class='blog-modal-content'>
+            <span class='close-modal' onclick='closeBlogModal()'>×</span>
+            <div id='blogDetailContent'></div>
+        </div>
+    </div>
+
+    <script>
+        // ADMIN PASSWORD - Aap yeh change kar sakte hain
+        const ADMIN_PASSWORD = 'digiyaar2026';
+        let isAdminLoggedIn = false;
+
+        // Load blogs on page load
+        document.addEventListener('DOMContentLoaded', loadBlogs);
+
+        function showAdminPanel() {
+            document.getElementById('adminPanel').classList.add('active');
+            if (isAdminLoggedIn) {
+                document.getElementById('loginSection').style.display = 'none';
+                document.getElementById('blogFormSection').style.display = 'block';
+            } else {
+                document.getElementById('loginSection').style.display = 'block';
+                document.getElementById('blogFormSection').style.display = 'none';
+            }
+        }
+
+        function closeAdminPanel() {
+            document.getElementById('adminPanel').classList.remove('active');
+            document.getElementById('blogForm').reset();
+            document.getElementById('loginError').style.display = 'none';
+            document.getElementById('successMessage').style.display = 'none';
+        }
+
+        function handleLogin(event) {
+            event.preventDefault();
+            const password = document.getElementById('adminPassword').value;
+            const errorDiv = document.getElementById('loginError');
+
+            if (password === ADMIN_PASSWORD) {
+                isAdminLoggedIn = true;
+                document.getElementById('loginSection').style.display = 'none';
+                document.getElementById('blogFormSection').style.display = 'block';
+                document.getElementById('adminPassword').value = '';
+                errorDiv.style.display = 'none';
+            } else {
+                errorDiv.textContent = '❌ Incorrect password!';
+                errorDiv.style.display = 'block';
+            }
+        }
+
+        function logout() {
+            isAdminLoggedIn = false;
+            closeAdminPanel();
+        }
+
+        function handleBlogSubmit(event) {
+            event.preventDefault();
+
+            const blog = {
+                id: Date.now().toString(),
+                title: document.getElementById('blogTitle').value,
+                icon: document.getElementById('blogIcon').value,
+                category: document.getElementById('blogCategory').value,
+                excerpt: document.getElementById('blogExcerpt').value,
+                content: document.getElementById('blogContent').value,
+                author: document.getElementById('blogAuthor').value,
+                readTime: document.getElementById('blogReadTime').value,
+                date: new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })
+            };
+
+            try {
+                let blogs = JSON.parse(localStorage.getItem('digiyaar_blogs') || '[]');
+                blogs.unshift(blog);
+                localStorage.setItem('digiyaar_blogs', JSON.stringify(blogs));
+
+                const successDiv = document.getElementById('successMessage');
+                successDiv.textContent = '✅ Blog successfully published!';
+                successDiv.style.display = 'block';
+
+                document.getElementById('blogForm').reset();
+                
+                setTimeout(() => {
+                    closeAdminPanel();
+                    loadBlogs();
+                }, 1500);
+            } catch (error) {
+                alert('Error: ' + error.message);
+            }
+        }
+
+        function loadBlogs() {
+            try {
+                const blogs = JSON.parse(localStorage.getItem('digiyaar_blogs') || '[]');
+                const blogGrid = document.getElementById('blogGrid');
+                const emptyState = document.getElementById('emptyState');
+
+                if (blogs.length === 0) {
+                    blogGrid.innerHTML = '';
+                    emptyState.style.display = 'block';
+                    return;
+                }
+
+                emptyState.style.display = 'none';
+                blogGrid.innerHTML = blogs.map(blog => `
+                    <div class='blog-card' onclick='viewBlog("${blog.id}")'>
+                        <div class='blog-image'>
+                            <i class='fas ${blog.icon}'></i>
+                        </div>
+                        <div class='blog-content'>
+                            <div class='blog-meta'>
+                                <span><i class='fas fa-calendar'></i> ${blog.date}</span>
+                                <span><i class='fas fa-clock'></i> ${blog.readTime} min</span>
+                                <span><i class='fas fa-tag'></i> ${blog.category}</span>
+                            </div>
+                            <h3 class='blog-title'>${blog.title}</h3>
+                            <p class='blog-excerpt'>${blog.excerpt}</p>
+                            <a href='#' class='read-more' onclick='event.preventDefault(); viewBlog("${blog.id}")'>
+                                Read More <i class='fas fa-arrow-right'></i>
+                            </a>
+                        </div>
+                    </div>
+                `).join('');
+            } catch (error) {
+                console.error('Error loading blogs:', error);
+            }
+        }
+
+        function viewBlog(blogId) {
+            try {
+                const blogs = JSON.parse(localStorage.getItem('digiyaar_blogs') || '[]');
+                const blog = blogs.find(b => b.id === blogId);
+                
+                if (blog) {
+                    const modal = document.getElementById('blogModal');
+                    const content = document.getElementById('blogDetailContent');
+                    
+                    content.innerHTML = `
+                        <h1>${blog.title}</h1>
+                        <div class='blog-modal-meta'>
+                            <span><i class='fas fa-user'></i> ${blog.author}</span>
+                            <span><i class='fas fa-calendar'></i> ${blog.date}</span>
+                            <span><i class='fas fa-clock'></i> ${blog.readTime} min read</span>
+                            <span><i class='fas fa-tag'></i> ${blog.category}</span>
+                        </div>
+                        <div class='blog-modal-content-text'>${blog.content}</div>
+                    `;
+                    
+                    modal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                }
+            } catch (error) {
+                console.error('Error viewing blog:', error);
+            }
+        }
+
+        function closeBlogModal() {
+            document.getElementById('blogModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close on ESC key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeAdminPanel();
+                closeBlogModal();
+            }
+        });
+
+        // Close modal on outside click
+        document.getElementById('blogModal').addEventListener('click', function(event) {
+            if (event.target === this) {
+                closeBlogModal();
+            }
+        });
+
+        document.getElementById('adminPanel').addEventListener('click', function(event) {
+            if (event.target === this) {
+                closeAdminPanel();
+            }
+        });
+    </script>
+</body>
+</html>

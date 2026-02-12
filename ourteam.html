@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'/>
+    <meta content='width=device-width, initial-scale=1.0' name='viewport'/>
+    <title>Our Team - Meet the Experts | Digiyaar Digital Marketing</title>
+    <link rel="icon" type="image/png" href="https://drive.google.com/uc?export=view&id=1O_DhJduNw0t9q0xrOxqyHRpz8R9UGuQA"/>
+    <meta name="description" content="Meet the passionate digital marketing experts behind Digiyaar. Our team of SEO specialists, paid media experts, and content strategists are here to grow your business."/>
+    <meta name="keywords" content="Digiyaar Team, Digital Marketing Experts, SEO Specialists, Marketing Team Pakistan"/>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css' rel='stylesheet'/>
+    <link href='https://fonts.googleapis.com' rel='preconnect'/>
+    <link crossorigin='anonymous' href='https://fonts.gstatic.com' rel='preconnect'/>
+    <link href='https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;family=Poppins:wght@400;500;600;700;800&amp;display=swap' rel='stylesheet'/>
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #1a1a1a;
+            --card-bg: rgba(245, 245, 245, 0.95);
+            --primary-color: #dc2626;
+            --primary-light: #ef4444;
+            --secondary-color: #4b5563;
+            --accent-color: #2563eb;
+            --shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            --glass-border: rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --gradient: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: #1a1a1a;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(220, 38, 38, 0.05) 0%, transparent 25%),
+                radial-gradient(circle at 90% 80%, rgba(37, 99, 235, 0.05) 0%, transparent 25%),
+                radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.02) 0%, transparent 50%);
+            z-index: -1;
+        }
+
+        /* Header */
+        .page-header {
+            background: var(--card-bg);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid var(--glass-border);
+            padding: 20px 5%;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow);
+        }
+
+        .header-content {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .logo span {
+            color: #1a1a1a;
+        }
+
+        .back-btn {
+            padding: 10px 20px;
+            background: var(--gradient);
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+        }
+
+        .back-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(220, 38, 38, 0.2);
+        }
+
+        /* Hero Section */
+        .team-hero {
+            padding: 100px 5% 60px;
+            text-align: center;
+        }
+
+        .team-hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--text-color) 0%, var(--primary-color) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .team-hero p {
+            font-size: 1.2rem;
+            color: #6b7280;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* Main Container */
+        .team-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 60px 5%;
+        }
+
+        /* Team Grid */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+
+        .team-member {
+            background: var(--card-bg);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(0, 0, 0, 0.15);
+            border-radius: 25px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .team-member::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient);
+        }
+
+        .team-member:hover {
+            transform: translateY(-15px);
+            box-shadow: var(--shadow);
+        }
+
+        .member-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 25px;
+            background: linear-gradient(135deg, rgba(220, 38, 38, 0.15) 0%, rgba(37, 99, 235, 0.15) 100%);
+            border: 4px solid var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .member-image i {
+            font-size: 4rem;
+            color: var(--primary-color);
+        }
+
+        .member-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .member-info h3 {
+            font-size: 1.6rem;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .member-role {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 1.05rem;
+            margin-bottom: 15px;
+        }
+
+        .member-bio {
+            color: #6b7280;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .member-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .skill-tag {
+            background: rgba(220, 38, 38, 0.08);
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid var(--primary-color);
+        }
+
+        .member-social {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .member-social a {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #1a1a1a;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .member-social a:hover {
+            background: var(--primary-color);
+            color: #ffffff;
+            transform: translateY(-5px);
+        }
+
+        /* Stats Section */
+        .team-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+            padding: 60px 0;
+        }
+
+        .stat-box {
+            text-align: center;
+            padding: 30px;
+            background: var(--card-bg);
+            border-radius: 20px;
+            border: 1px solid rgba(0, 0, 0, 0.15);
+            transition: var(--transition);
+        }
+
+        .stat-box:hover {
+            transform: scale(1.05);
+            box-shadow: var(--shadow);
+        }
+
+        .stat-number {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .stat-label {
+            color: #6b7280;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        /* Values Section */
+        .team-values {
+            margin-bottom: 80px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 50px;
+            color: #1a1a1a;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .value-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(0, 0, 0, 0.15);
+            border-radius: 20px;
+            padding: 35px;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow);
+        }
+
+        .value-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(220, 38, 38, 0.08);
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+
+        .value-icon i {
+            font-size: 2rem;
+            color: var(--primary-color);
+        }
+
+        .value-card h3 {
+            font-size: 1.4rem;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+        }
+
+        .value-card p {
+            color: #6b7280;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* Footer */
+        .team-footer {
+            text-align: center;
+            padding: 60px 5%;
+            border-top: 1px solid var(--glass-border);
+            margin-top: 80px;
+        }
+
+        .team-footer h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .team-footer p {
+            color: #6b7280;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+
+        .cta-btn {
+            padding: 16px 40px;
+            background: var(--gradient);
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: var(--transition);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(225, 19, 17, 0.4);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .team-hero h1 {
+                font-size: 2rem;
+            }
+
+            .team-hero p {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header-content {
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .team-hero {
+                padding: 80px 5% 40px;
+            }
+
+            .team-container {
+                padding: 40px 5%;
+            }
+
+            .team-member {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class='page-header'>
+        <div class='header-content'>
+            <a class='logo' href='index.html'>Digi<span>yaar</span></a>
+            <a class='back-btn' href='index.html'>
+                <i class='fas fa-arrow-left'></i> Back to Home Page
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class='team-hero'>
+        <h1>Meet Our Expert Team</h1>
+        <p>
+            Digiyaar ki team passionate digital marketing experts par mubni hai jo aapki business growth ke liye dedicated hain. 
+            Har member apne field mein specialist hai aur latest trends aur strategies se well-versed hai.
+        </p>
+    </section>
+
+    <!-- Main Container -->
+    <div class='team-container'>
+        <!-- Team Members Grid -->
+        <div class='team-grid'>
+            <!-- Founder -->
+            <div class='team-member'>
+                <div class='member-image'>
+                    <img src='https://drive.google.com/thumbnail?id=1WQV13xvypnbXSd5sendC6SPF_Sh8ZHQQ&sz=w1000' alt='Shahab Uddin' onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <i class='fas fa-user-tie' style='display:none;'></i>
+                </div>
+                <div class='member-info'>
+                    <h3>Shahab Uddin</h3>
+                    <div class='member-role'>Founder & CEO</div>
+                    <p class='member-bio'>
+                        5+ years ka experience digital marketing mein. SEO, PPC, aur content strategy mein expert. 
+                        Digiyaar ko Pakistan ki leading marketing agency banane ka vision.
+                    </p>
+                    <div class='member-skills'>
+                        <span class='skill-tag'>SEO Strategy</span>
+                        <span class='skill-tag'>Leadership</span>
+                        <span class='skill-tag'>Growth Hacking</span>
+                    </div>
+                    <div class='member-social'>
+                        <a href='https://www.linkedin.com/in/shahab-uddin-b98027391/' target='_blank'><i class='fab fa-linkedin-in'></i></a>
+                        <a href='https://www.facebook.com/profile.php?id=61583460894593' target='_blank'><i class='fab fa-facebook-f'></i></a>
+                        <a href='https://www.instagram.com/digi.yaar45/' target='_blank'><i class='fab fa-instagram'></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SEO Specialist -->
+            <div class='team-member'>
+                <div class='member-image'>
+                    <i class='fas fa-user-circle'></i>
+                </div>
+                <div class='member-info'>
+                    <h3>Ali Hassan</h3>
+                    <div class='member-role'>Senior SEO Specialist</div>
+                    <p class='member-bio'>
+                        Technical SEO aur AI-powered search optimization mein expert. Google rankings improve karne ka proven track record.
+                    </p>
+                    <div class='member-skills'>
+                        <span class='skill-tag'>Technical SEO</span>
+                        <span class='skill-tag'>AI Search</span>
+                        <span class='skill-tag'>Analytics</span>
+                    </div>
+                    <div class='member-social'>
+                        <a href='#' target='_blank'><i class='fab fa-linkedin-in'></i></a>
+                        <a href='#' target='_blank'><i class='fab fa-twitter'></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Paid Media Expert -->
+            <div class='team-member'>
+                <div class='member-image'>
+                    <i class='fas fa-user'></i>
+                </div>
+                <div class='member-info'>
+                    <h3>Fatima Ahmed</h3>
+                    <div class='member-role'>Paid Media Manager</div>
+                    <p class='member-bio'>
+                        Google Ads, Facebook Ads, aur Instagram campaigns mein certified expert. ROI maximize karne ki specialist.
+                    </p>
+                    <div class='member-skills'>
+                        <span class='skill-tag'>Google Ads</span>
+                        <span class='skill-tag'>Meta Ads</span>
+                        <span class='skill-tag'>ROI Optimization</span>
+                    </div>
+                    <div class='member-social'>
+                        <a href='#' target='_blank'><i class='fab fa-linkedin-in'></i></a>
+                        <a href='#' target='_blank'><i class='fab fa-facebook-f'></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Content Strategist -->
+            <div class='team-member'>
+                <div class='member-image'>
+                    <i class='fas fa-user-edit'></i>
+                </div>
+                <div class='member-info'>
+                    <h3>Ahmed Khan</h3>
+                    <div class='member-role'>Content Strategist</div>
+                    <p class='member-bio'>
+                        Engaging content creation aur content marketing strategy mein experienced. Brand storytelling ka expert.
+                    </p>
+                    <div class='member-skills'>
+                        <span class='skill-tag'>Content Writing</span>
+                        <span class='skill-tag'>Strategy</span>
+                        <span class='skill-tag'>Copywriting</span>
+                    </div>
+                    <div class='member-social'>
+                        <a href='#' target='_blank'><i class='fab fa-linkedin-in'></i></a>
+                        <a href='#' target='_blank'><i class='fab fa-medium'></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Social Media Manager -->
+            <div class='team-member'>
+                <div class='member-image'>
+                    <i class='fas fa-user-friends'></i>
+                </div>
+                <div class='member-info'>
+                    <h3>Sara Malik</h3>
+                    <div class='member-role'>Social Media Manager</div>
+                    <p class='member-bio'>
+                        Social media platforms par brand presence build karne mein expert. Creative campaigns aur community management.
+                    </p>
+                    <div class='member-skills'>
+                        <span class='skill-tag'>Social Media</span>
+                        <span class='skill-tag'>Community</span>
+                        <span class='skill-tag'>Engagement</span>
+                    </div>
+                    <div class='member-social'>
+                        <a href='#' target='_blank'><i class='fab fa-instagram'></i></a>
+                        <a href='#' target='_blank'><i class='fab fa-tiktok'></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Analytics Expert -->
+            <div class='team-member'>
+                <div class='member-image'>
+                    <i class='fas fa-chart-line'></i>
+                </div>
+                <div class='member-info'>
+                    <h3>Bilal Raza</h3>
+                    <div class='member-role'>Analytics Expert</div>
+                    <p class='member-bio'>
+                        Data analysis aur performance tracking mein specialized. Actionable insights provide karne ka expert.
+                    </p>
+                    <div class='member-skills'>
+                        <span class='skill-tag'>Google Analytics</span>
+                        <span class='skill-tag'>Data Analysis</span>
+                        <span class='skill-tag'>Reporting</span>
+                    </div>
+                    <div class='member-social'>
+                        <a href='#' target='_blank'><i class='fab fa-linkedin-in'></i></a>
+                        <a href='#' target='_blank'><i class='fab fa-github'></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Team Stats -->
+        <div class='team-stats'>
+            <div class='stat-box'>
+                <div class='stat-number'>15+</div>
+                <div class='stat-label'>Team Members</div>
+            </div>
+            <div class='stat-box'>
+                <div class='stat-number'>50+</div>
+                <div class='stat-label'>Years Combined Experience</div>
+            </div>
+            <div class='stat-box'>
+                <div class='stat-number'>100+</div>
+                <div class='stat-label'>Successful Projects</div>
+            </div>
+            <div class='stat-box'>
+                <div class='stat-number'>98%</div>
+                <div class='stat-label'>Client Satisfaction</div>
+            </div>
+        </div>
+
+        <!-- Team Values -->
+        <div class='team-values'>
+            <h2 class='section-title'>Our Core Values</h2>
+            <div class='values-grid'>
+                <div class='value-card'>
+                    <div class='value-icon'>
+                        <i class='fas fa-lightbulb'></i>
+                    </div>
+                    <h3>Innovation</h3>
+                    <p>Hum latest trends aur technologies ko apnate hain taake aapko best results mil sakein.</p>
+                </div>
+
+                <div class='value-card'>
+                    <div class='value-icon'>
+                        <i class='fas fa-handshake'></i>
+                    </div>
+                    <h3>Transparency</h3>
+                    <p>Har step par clear communication aur honest reporting hamara commitment hai.</p>
+                </div>
+
+                <div class='value-card'>
+                    <div class='value-icon'>
+                        <i class='fas fa-trophy'></i>
+                    </div>
+                    <h3>Excellence</h3>
+                    <p>Quality aur results hamari priority hain. Hum mediocrity accept nahi karte.</p>
+                </div>
+
+                <div class='value-card'>
+                    <div class='value-icon'>
+                        <i class='fas fa-users'></i>
+                    </div>
+                    <h3>Collaboration</h3>
+                    <p>Teamwork aur client partnership se hi best outcomes achieve hote hain.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Footer -->
+    <footer class='team-footer'>
+        <h2>Ready to Work With Us?</h2>
+        <p>
+            Hamare expert team ke saath apni digital marketing journey shuru karein. 
+            Let's grow your business together!
+        </p>
+        <a href='index.html#contact' class='cta-btn'>
+            <i class='fas fa-envelope'></i> Get in Touch
+        </a>
+    </footer>
+
+    <script>
+        // Animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.team-member, .stat-box, .value-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'/>
+    <meta content='width=device-width, initial-scale=1.0' name='viewport'/>
+    <title>Case Studies - Real Results & Success Stories | Digiyaar</title>
+    <link rel="icon" type="image/png" href="https://drive.google.com/uc?export=view&id=1O_DhJduNw0t9q0xrOxqyHRpz8R9UGuQA"/>
+    <meta name="description" content="Explore Digiyaar's case studies and see how we've helped businesses achieve remarkable growth through strategic digital marketing."/>
+    <meta name="keywords" content="Case Studies, Success Stories, Digital Marketing Results, Client Success, ROI, Pakistan Marketing"/>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css' rel='stylesheet'/>
+    <link href='https://fonts.googleapis.com' rel='preconnect'/>
+    <link crossorigin='anonymous' href='https://fonts.gstatic.com' rel='preconnect'/>
+    <link href='https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap' rel='stylesheet'/>
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #1a1a1a;
+            --card-bg: rgba(245, 245, 245, 0.95);
+            --primary-color: #dc2626;
+            --primary-light: #ef4444;
+            --secondary-color: #4b5563;
+            --accent-color: #2563eb;
+            --shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            --glass-border: rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --gradient: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+            --gradient-2: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: #1a1a1a;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(220, 38, 38, 0.05) 0%, transparent 25%),
+                radial-gradient(circle at 90% 80%, rgba(37, 99, 235, 0.05) 0%, transparent 25%);
+            z-index: -1;
+        }
+
+        /* Header */
+        .case-header {
+            background: var(--card-bg);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid var(--glass-border);
+            padding: 20px 5%;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .logo span {
+            color: #1a1a1a;
+        }
+
+        .back-btn {
+            padding: 10px 20px;
+            background: var(--gradient);
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+        }
+
+        .back-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(220, 38, 38, 0.2);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 5% 60px;
+            text-align: center;
+        }
+
+        .hero-section h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--text-color) 0%, var(--primary-color) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-section p {
+            font-size: 1.2rem;
+            color: #6b7280;
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        /* Stats Section */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto 80px;
+            padding: 0 5%;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(0, 0, 0, 0.15);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            color: #6b7280;
+            font-size: 0.95rem;
+        }
+
+        /* Case Studies Grid */
+        .cases-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 5% 80px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .cases-grid {
+            display: grid;
+            gap: 40px;
+        }
+
+        .case-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            border: 1px solid rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .case-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+            box-shadow: var(--shadow);
+        }
+
+        .case-header-section {
+            padding: 40px;
+            background: linear-gradient(135deg, rgba(220, 38, 38, 0.08) 0%, rgba(37, 99, 235, 0.08) 100%);
+        }
+
+        .case-category {
+            display: inline-block;
+            padding: 6px 15px;
+            background: var(--gradient);
+            color: #ffffff;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .case-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .case-subtitle {
+            color: #6b7280;
+            font-size: 1.1rem;
+        }
+
+        .case-body {
+            padding: 40px;
+        }
+
+        .case-challenge {
+            margin-bottom: 30px;
+        }
+
+        .case-challenge h3,
+        .case-solution h3,
+        .case-results h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .case-challenge p,
+        .case-solution p {
+            color: #6b7280;
+            line-height: 1.8;
+        }
+
+        .case-solution {
+            margin-bottom: 30px;
+        }
+
+        .solution-list {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .solution-list li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            color: #6b7280;
+        }
+
+        .solution-list li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .case-results {
+            background: linear-gradient(135deg, rgba(220, 38, 38, 0.05) 0%, rgba(37, 99, 235, 0.05) 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 30px;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .result-item {
+            text-align: center;
+        }
+
+        .result-number {
+            font-size: 2rem;
+            font-weight: 800;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .result-label {
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            max-width: 1200px;
+            margin: 0 auto 80px;
+            padding: 60px 5%;
+            background: var(--card-bg);
+            border-radius: 20px;
+            border: 1px solid rgba(0, 0, 0, 0.15);
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            color: #6b7280;
+            margin-bottom: 30px;
+        }
+
+        .cta-btn {
+            padding: 15px 40px;
+            background: var(--gradient);
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            display: inline-block;
+            transition: var(--transition);
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(220, 38, 38, 0.2);
+        }
+
+        /* Footer */
+        .case-footer {
+            background: var(--card-bg);
+            border-top: 1px solid var(--glass-border);
+            padding: 30px 5%;
+            text-align: center;
+        }
+
+        .case-footer p {
+            color: #6b7280;
+            margin: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 2rem;
+            }
+
+            .case-title {
+                font-size: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .results-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class='case-header'>
+        <div class='header-content'>
+            <a class='logo' href='index.html'>
+                Digi<span>yaar</span>
+            </a>
+            <a class='back-btn' href='index.html'>
+                <i class='fas fa-arrow-left'></i> Back to Home Page
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class='hero-section'>
+        <h1>Case Studies: Real Results, Real Impact</h1>
+        <p>
+            Dekhiye kaise humne businesses ko transform kiya aur unke growth goals achieve karne mein madad ki. Har case study ek unique journey hai success ki taraf.
+        </p>
+    </section>
+
+    <!-- Stats Section -->
+    <div class='stats-grid'>
+        <div class='stat-card'>
+            <div class='stat-number'>250%</div>
+            <div class='stat-label'>Average ROI Increase</div>
+        </div>
+        <div class='stat-card'>
+            <div class='stat-number'>50+</div>
+            <div class='stat-label'>Successful Projects</div>
+        </div>
+        <div class='stat-card'>
+            <div class='stat-number'>35+</div>
+            <div class='stat-label'>Happy Clients</div>
+        </div>
+        <div class='stat-card'>
+            <div class='stat-number'>180%</div>
+            <div class='stat-label'>Traffic Growth</div>
+        </div>
+    </div>
+
+    <!-- Case Studies -->
+    <div class='cases-container'>
+        <h2 class='section-title'>Featured Success Stories</h2>
+        
+        <div class='cases-grid'>
+            <!-- Case Study 1: E-Commerce -->
+            <div class='case-card'>
+                <div class='case-header-section'>
+                    <span class='case-category'>E-Commerce</span>
+                    <h2 class='case-title'>Fashion Brand: 350% Revenue Growth in 6 Months</h2>
+                    <p class='case-subtitle'>Kaise ek local fashion brand ne digital transformation se apni sales triple kar li</p>
+                </div>
+                <div class='case-body'>
+                    <div class='case-challenge'>
+                        <h3><i class='fas fa-exclamation-circle'></i> The Challenge</h3>
+                        <p>
+                            Ek established Pakistani fashion brand ka limited online presence tha. Unki website par monthly sirf 2,000 visitors aate the aur conversion rate 0.8% se bhi kam tha. Physical stores par dependency zyada thi aur online sales negligible the.
+                        </p>
+                    </div>
+
+                    <div class='case-solution'>
+                        <h3><i class='fas fa-lightbulb'></i> Our Solution</h3>
+                        <ul class='solution-list'>
+                            <li>Complete website redesign with optimized user experience</li>
+                            <li>SEO strategy implementation for fashion keywords</li>
+                            <li>Instagram & Facebook ads campaigns with lookalike audiences</li>
+                            <li>Email marketing automation for abandoned carts</li>
+                            <li>Google Shopping ads for product visibility</li>
+                            <li>Influencer partnerships for brand awareness</li>
+                        </ul>
+                    </div>
+
+                    <div class='case-results'>
+                        <h3><i class='fas fa-chart-line'></i> Results Achieved</h3>
+                        <div class='results-grid'>
+                            <div class='result-item'>
+                                <span class='result-number'>+350%</span>
+                                <span class='result-label'>Revenue Increase</span>
+                            </div>
+                            <div class='result-item'>
+                                <span class='result-number'>+420%</span>
+                                <span class='result-label'>Website Traffic</span>
+                            </div>
+                            <div class='result-item'>
+                                <span class='result-number'>3.2%</span>
+                                <span class='result-label'>Conversion Rate</span>
+                            </div>
+                            <div class='result-item'>
+                                <span class='result-number'>Rs 8.5M</span>
+                                <span class='result-label'>Monthly Revenue</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Case Study 2: SaaS -->
+            <div class='case-card'>
+                <div class='case-header-section'>
+                    <span class='case-category'>SaaS / Tech</span>
+                    <h2 class='case-title'>B2B SaaS: 285% Lead Generation Growth</h2>
+                    <p class='case-subtitle'>Tech startup ke liye qualified leads generate karne ka complete strategy</p>
+                </div>
+                <div class='case-body'>
+                    <div class='case-challenge'>
+                        <h3><i class='fas fa-exclamation-circle'></i> The Challenge</h3>
+                        <p>
+                            Ek B2B SaaS company ko quality leads nahi mil rahe the. Unka cost per lead bohot zyada tha (Rs 12,000+) aur conversion rate 2% se kam. Marketing budget waste ho raha tha ineffective channels par.
+                        </p>
+                    </div>
+
+                    <div class='case-solution'>
+                        <h3><i class='fas fa-lightbulb'></i> Our Solution</h3>
+                        <ul class='solution-list'>
+                            <li>LinkedIn ads strategy with precise B2B targeting</li>
+                            <li>Content marketing with industry-specific whitepapers</li>
+                            <li>SEO optimization for high-intent SaaS keywords</li>
+                            <li>Marketing automation with lead scoring system</li>
+                            <li>Retargeting campaigns for website visitors</li>
+                            <li>Free trial optimization with onboarding emails</li>
+                        </ul>
+                    </div>
+
+                    <div class='case-results'>
+                        <h3><i class='fas fa-chart-line'></i> Results Achieved</h3>
+                        <div class='results-grid'>
+                            <div class='result-item'>
+                                <span class='result-number'>+285%</span>
+                                <span class='result-label'>Lead Volume</span>
+                            </div>
+                            <div class='result-item'>
+                                <span class='result-number'>-65%</span>
+                                <span class='result-label'>Cost Per Lead</span>
+                            </div>
+                            <div class='result-item'>
+                                <span class='result-number'>8.5%</span>
+                                <span class='result-label'>Conversion Rate</span>
+                            </div>
+                            <div class='result-item'>
+                                <span class='result-number'>Rs 4,200</span>
+                                <span class='result-label'>New CPL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Case Study 3: Local Business -->
+            <div class='case-card'>
+                <div class='case-header-section'>
+                    <span class='case-category'>Local Business</span>
+                    <h2 class='case-title'>Restaurant Chain: 400% Delivery Orders Increase</h2>
+                    <p class='case-subtitle'>Local restaurant chain ke liye comprehensive digital strategy</p>
+                </div>
+                <div class='case-body'>
+                    <div class='case-challenge'>
+                        <h3><i class='fas fa-exclamation-circle'></i> The Challenge</h3>
+                        <p>
+                            Multi-location restaurant chain ka online ordering system weak tha. Competitors se peeche the aur social media presence minimal. Daily delivery orders sirf 40-50 the across all locations.
+                        </p>
+                    </div>
+
+                    <div class='case-solution'>
+                        <h3><i class='fas fa-lightbulb'></i> Our Solution</h3>
+                        <ul class='solution-list'>
+                            <li>Google My Business optimization for all locations</li>
+                            <li>Facebook & Instagram ads for local targeting</li>
+                            <li>Food photography and social media content creation</li>
+                            <li>Online ordering system integration and optimization</li>
+                            <li>WhatsApp Business automation for orders</li>
+                            <li>Review management and reputation building</li>
+                        </ul>
+                    </div>
+
+                    <div class='case-results'>
+                        <h3><i class='fas fa-chart-line'></i> Results Achieved</h3>
+                        <div class='results-grid'>
+                            <div class='result-item'>
+                                <span class='result-number'>+400%</span>
+                                <span class='result-label'>Daily Orders</span>
+                            </div>
+                            <div class='result-item'>
+                                <span class='result-number'>+320%</span>
+                                <span class='result-label'>Social Following</span>
+                            </div>
+                            <div class='result-item'>
+                                <span class='result-number'>4.8★</span>
+                                <span class='result-label'>Average Rating</span>
+                            </div>
+                            <div class='result-item'>
+                                <span class='result-number'>250+</span>
+                                <span class='result-label'>Daily Orders</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Case Study 4: Education -->
+            <div class='case-card'>
+                <div class='case-header-section'>
+                    <span class='case-category'>Education</span>
+                    <h2 class='case-title'>Online Academy: 500+ Student Enrollments</h2>
+                    <p class='case-subtitle'>Digital courses platform ke liye student acquisition strategy</p>
+                </div>
+                <div class='case-body'>
+                    <div class='case-challenge'>
+                        <h3><i class='fas fa-exclamation-circle'></i> The Challenge</h3>
+                        <p>
+                            Naya online learning platform launch hua tha lekin enrollments nahi aa rahe the. Monthly sirf 15-20 students enroll ho rahe the despite quality courses. Brand awareness zero tha market mein.
+                        </p>
+                    </div>
+
+                    <div class='case-solution'>
+                        <h3><i class='fas fa-lightbulb'></i> Our Solution</h3>
+                        <ul class='solution-list'>
+                            <li>YouTube channel optimization with educational content</li>
+                            <li>Facebook & Instagram community building</li>
+                            <li>Google Ads for education keywords</li>
+                            <li>Free webinar funnel for lead generation</li>
+                            <li>Email marketing automation for nurturing</li>
+                            <li>Testimonial collection and social proof strategy</li>
+                        </ul>
+                    </div>
+
+                    <div class='case-results'>
+                        <h3><i class='fas fa-chart-line'></i> Results Achieved</h3>
+                        <div class='results-grid'>
+                            <div class='result-item'>
+                                <span class='result-number'>500+</span>
+                                <span class='result-label'>New Students</span>
+                            </div>
+                            <div class='result-item'>
+                                <span class='result-number'>+650%</span>
+                                <span class='result-label'>Website Traffic</span>
+                            </div>
+                            <div class='result-item'>
+                                <span class='result-number'>12K+</span>
+                                <span class='result-label'>YouTube Subs</span>
+                            </div>
+                            <div class='result-item'>
+                                <span class='result-number'>Rs 3.5M</span>
+                                <span class='result-label'>Revenue (6mo)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <section class='cta-section'>
+        <h2>Ready to Write Your Success Story?</h2>
+        <p>
+            Aapki business bhi in companies ki tarah grow kar sakti hai. Chaliye milkar aapke goals achieve karte hain.
+        </p>
+        <a href='index.html#contact' class='cta-btn'>
+            <i class='fas fa-rocket'></i> Start Your Journey Today
+        </a>
+    </section>
+
+    <!-- Footer -->
+    <footer class='case-footer'>
+        <p>&copy; 2026 Digiyaar Digital Marketing Agency. All rights reserved.</p>
+    </footer>
+</body>
+</html>

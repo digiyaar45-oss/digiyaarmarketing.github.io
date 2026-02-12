@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'/>
+    <meta content='width=device-width, initial-scale=1.0' name='viewport'/>
+    <title>About Us | Digiyaar Digital Marketing Agency</title>
+    <link rel="icon" type="image/png" href="https://drive.google.com/uc?export=view&id=1O_DhJduNw0t9q0xrOxqyHRpz8R9UGuQA"/>
+    <meta name="description" content="Learn about Digiyaar - Pakistan's leading digital marketing agency. Our mission, vision, and expert team dedicated to your success."/>
+    <meta name="keywords" content="Digiyaar, About Us, Digital Marketing Team, Pakistan Agency"/>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css' rel='stylesheet'/>
+    <link href='https://fonts.googleapis.com' rel='preconnect'/>
+    <link crossorigin='anonymous' href='https://fonts.gstatic.com' rel='preconnect'/>
+    <link href='https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;family=Poppins:wght@400;500;600;700;800&amp;display=swap' rel='stylesheet'/>
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #1a1a1a;
+            --card-bg: rgba(245, 245, 245, 0.95);
+            --primary-color: #dc2626;
+            --primary-light: #ef4444;
+            --secondary-color: #4b5563;
+            --accent-color: #2563eb;
+            --shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            --glass-border: rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --gradient: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: #1a1a1a;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(220, 38, 38, 0.05) 0%, transparent 25%),
+                radial-gradient(circle at 90% 80%, rgba(37, 99, 235, 0.05) 0%, transparent 25%);
+            z-index: -1;
+        }
+
+        /* Header */
+        .blog-header {
+            background: var(--card-bg);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid var(--glass-border);
+            padding: 20px 5%;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .logo span {
+            color: #1a1a1a;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: #1a1a1a;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 8px 16px;
+            border-radius: 8px;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color);
+            background: rgba(255, 68, 68, 0.1);
+        }
+
+        .nav-link.active {
+            color: var(--primary-color);
+            background: rgba(255, 68, 68, 0.15);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 5%;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 25px;
+            background: linear-gradient(135deg, var(--text-color) 0%, var(--primary-color) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .hero-subtitle {
+            font-size: 1.4rem;
+            color: #6b7280;
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+
+        /* Content Section */
+        .content-section {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 5%;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: #6b7280;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+
+        /* Stats Section */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid rgba(0, 0, 0, 0.15);
+            transition: var(--transition);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow);
+            border-color: var(--primary-color);
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--primary-color);
+            font-family: 'Poppins', sans-serif;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            color: #6b7280;
+            font-weight: 600;
+        }
+
+        /* Team Section */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .team-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.15);
+            transition: var(--transition);
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow);
+            border-color: var(--primary-color);
+        }
+
+        .team-image {
+            width: 100%;
+            height: 300px;
+            background: var(--gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        .team-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .team-info {
+            padding: 30px;
+        }
+
+        .team-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #1a1a1a;
+        }
+
+        .team-role {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+
+        .team-bio {
+            color: #6b7280;
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        /* Values Grid */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .value-card {
+            background: var(--card-bg);
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid rgba(0, 0, 0, 0.15);
+            transition: var(--transition);
+        }
+
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow);
+            border-color: var(--primary-color);
+        }
+
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 2rem;
+            color: #ffffff;
+        }
+
+        .value-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+        }
+
+        .value-description {
+            color: #6b7280;
+            line-height: 1.7;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--card-bg);
+            border: 1px solid rgba(0, 0, 0, 0.15);
+            border-radius: 20px;
+            padding: 60px 40px;
+            text-align: center;
+            margin: 80px 0;
+        }
+
+        .cta-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .cta-text {
+            font-size: 1.2rem;
+            color: #6b7280;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-btn {
+            background: var(--gradient);
+            color: #ffffff;
+            padding: 16px 40px;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(225, 19, 17, 0.4);
+        }
+
+        .cta-btn.whatsapp {
+            background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+        }
+
+        .cta-btn.whatsapp:hover {
+            box-shadow: 0 15px 35px rgba(37, 211, 102, 0.4);
+        }
+
+        /* Footer */
+        .blog-footer {
+            background: var(--card-bg);
+            border-top: 1px solid var(--glass-border);
+            padding: 30px 5%;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .nav-menu {
+                gap: 15px;
+            }
+
+            .nav-link {
+                padding: 6px 12px;
+                font-size: 0.9rem;
+            }
+
+            .cta-section {
+                padding: 50px 30px;
+            }
+
+            .cta-title {
+                font-size: 1.8rem;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class='blog-header'>
+        <div class='header-content'>
+            <a class='logo' href='index.html'>Digi<span>yaar</span></a>
+            <nav class='nav-menu'>
+                <a class='nav-link' href='index.html'>Home</a>
+                <a class='nav-link active' href='about.html'>About</a>
+                <a class='nav-link' href='services.html'>Services</a>
+                <a class='nav-link' href='portfolio.html'>Portfolio</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class='hero-section'>
+        <h1 class='hero-title'>About Digiyaar</h1>
+        <p class='hero-subtitle'>
+            Pakistan's premier digital marketing agency, empowering businesses to thrive in the digital landscape through innovative strategies and cutting-edge solutions.
+        </p>
+    </section>
+
+    <!-- Stats Section -->
+    <section class='content-section'>
+        <div class='stats-grid'>
+            <div class='stat-card'>
+                <div class='stat-number'>500+</div>
+                <div class='stat-label'>Happy Clients</div>
+            </div>
+            <div class='stat-card'>
+                <div class='stat-number'>1000+</div>
+                <div class='stat-label'>Projects Completed</div>
+            </div>
+            <div class='stat-card'>
+                <div class='stat-number'>5+</div>
+                <div class='stat-label'>Years Experience</div>
+            </div>
+            <div class='stat-card'>
+                <div class='stat-number'>98%</div>
+                <div class='stat-label'>Client Satisfaction</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section class='content-section'>
+        <h2 class='section-title'>Our Story</h2>
+        <p class='section-subtitle'>
+            Founded in 2020, Digiyaar started with a simple mission: to help Pakistani businesses succeed online. Today, we're proud to be one of Pakistan's leading digital marketing agencies, serving clients across the globe.
+        </p>
+        <div style='max-width: 800px; margin: 40px auto; font-size: 1.1rem; color: #6b7280; line-height: 1.9;'>
+            <p style='margin-bottom: 25px;'>
+                Digiyaar ki journey ek passion se shuru hui - helping businesses unlock their digital potential. Humne dekha ke Pakistan mein kaafi talented entrepreneurs hain jo sirf right guidance aur digital strategies ki zarurat hai.
+            </p>
+            <p style='margin-bottom: 25px;'>
+                Pichle 5 saalo mein, humne 500+ businesses ko online grow karne mein madad ki hai. Chote local shops se lekar established brands tak - har ek client ke sath humara approach personalized aur results-driven raha hai.
+            </p>
+            <p>
+                Aaj, Digiyaar sirf ek agency nahi hai - ye ek family hai jo aapke business goals ko apne goals samajhti hai aur har step par aapke sath khadi hai.
+            </p>
+        </div>
+    </section>
+
+    <!-- Mission & Vision Section -->
+    <section class='content-section'>
+        <div class='values-grid'>
+            <div class='value-card'>
+                <div class='value-icon'><i class='fas fa-bullseye'></i></div>
+                <h3 class='value-title'>Our Mission</h3>
+                <p class='value-description'>
+                    To empower Pakistani businesses with world-class digital marketing solutions that drive real results and sustainable growth.
+                </p>
+            </div>
+            <div class='value-card'>
+                <div class='value-icon'><i class='fas fa-eye'></i></div>
+                <h3 class='value-title'>Our Vision</h3>
+                <p class='value-description'>
+                    To become Pakistan's most trusted digital marketing partner, known for innovation, integrity, and exceptional client success.
+                </p>
+            </div>
+            <div class='value-card'>
+                <div class='value-icon'><i class='fas fa-heart'></i></div>
+                <h3 class='value-title'>Our Values</h3>
+                <p class='value-description'>
+                    Transparency, excellence, innovation, and client-first approach guide everything we do at Digiyaar.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class='content-section'>
+        <h2 class='section-title'>Meet Our Team</h2>
+        <p class='section-subtitle'>
+            Dedicated experts passionate about your digital success
+        </p>
+        <div class='team-grid'>
+            <div class='team-card'>
+                <div class='team-image'>
+                    <img alt='Shahab Uddin' src='https://drive.google.com/thumbnail?id=1WQV13xvypnbXSd5sendC6SPF_Sh8ZHQQ&sz=w200' onerror="this.parentElement.innerHTML='<i class=\'fas fa-user\'></i>'"/>
+                </div>
+                <div class='team-info'>
+                    <h3 class='team-name'>Shahab Uddin</h3>
+                    <p class='team-role'>Founder & CEO</p>
+                    <p class='team-bio'>
+                        5+ years of digital marketing expertise. Passionate about helping businesses grow through innovative strategies and data-driven approaches.
+                    </p>
+                </div>
+            </div>
+            <div class='team-card'>
+                <div class='team-image'>
+                    <i class='fas fa-user'></i>
+                </div>
+                <div class='team-info'>
+                    <h3 class='team-name'>Marketing Team</h3>
+                    <p class='team-role'>Digital Strategists</p>
+                    <p class='team-bio'>
+                        Expert team specializing in SEO, social media marketing, content creation, and paid advertising campaigns.
+                    </p>
+                </div>
+            </div>
+            <div class='team-card'>
+                <div class='team-image'>
+                    <i class='fas fa-user'></i>
+                </div>
+                <div class='team-info'>
+                    <h3 class='team-name'>Creative Team</h3>
+                    <p class='team-role'>Design & Content Creators</p>
+                    <p class='team-bio'>
+                        Talented designers and content creators who bring your brand vision to life with stunning visuals and compelling content.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class='content-section'>
+        <div class='cta-section'>
+            <h2 class='cta-title'>Ready to Grow Your Business?</h2>
+            <p class='cta-text'>
+                Let's discuss how Digiyaar can help you achieve your digital marketing goals. Get a free consultation today!
+            </p>
+            <div class='cta-buttons'>
+                <a class='cta-btn' href='index.html'>
+                    <i class='fas fa-globe'></i> Visit Website
+                </a>
+                <a class='cta-btn whatsapp' href='https://wa.me/923089207425?text=Hi%20Digiyaar,%20I%20want%20to%20know%20more%20about%20your%20services' target='_blank'>
+                    <i class='fab fa-whatsapp'></i> WhatsApp Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class='blog-footer'>
+        <p>&copy; 2026 Digiyaar Digital Marketing Agency. All rights reserved.</p>
+    </footer>
+</body>
+</html>

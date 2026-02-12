@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'/>
+    <meta content='width=device-width, initial-scale=1.0' name='viewport'/>
+    <title>Our Services | Digiyaar Digital Marketing Agency</title>
+    <link rel="icon" type="image/png" href="https://drive.google.com/uc?export=view&id=1O_DhJduNw0t9q0xrOxqyHRpz8R9UGuQA"/>
+    <meta name="description" content="Explore Digiyaar's comprehensive digital marketing services - SEO, Social Media Marketing, Content Creation, Web Development, and more."/>
+    <meta name="keywords" content="Digital Marketing Services, SEO Pakistan, Social Media Marketing, Web Development, Content Creation"/>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css' rel='stylesheet'/>
+    <link href='https://fonts.googleapis.com' rel='preconnect'/>
+    <link crossorigin='anonymous' href='https://fonts.gstatic.com' rel='preconnect'/>
+    <link href='https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;family=Poppins:wght@400;500;600;700;800&amp;display=swap' rel='stylesheet'/>
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #1a1a1a;
+            --card-bg: rgba(245, 245, 245, 0.95);
+            --primary-color: #dc2626;
+            --primary-light: #ef4444;
+            --secondary-color: #4b5563;
+            --accent-color: #2563eb;
+            --shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            --glass-border: rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --gradient: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: #1a1a1a;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(220, 38, 38, 0.05) 0%, transparent 25%),
+                radial-gradient(circle at 90% 80%, rgba(37, 99, 235, 0.05) 0%, transparent 25%);
+            z-index: -1;
+        }
+
+        /* Header */
+        .blog-header {
+            background: var(--card-bg);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid var(--glass-border);
+            padding: 20px 5%;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .logo span {
+            color: #1a1a1a;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: #1a1a1a;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 8px 16px;
+            border-radius: 8px;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color);
+            background: rgba(255, 68, 68, 0.1);
+        }
+
+        .nav-link.active {
+            color: var(--primary-color);
+            background: rgba(255, 68, 68, 0.15);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 5%;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 25px;
+            background: linear-gradient(135deg, var(--text-color) 0%, var(--primary-color) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .hero-subtitle {
+            font-size: 1.4rem;
+            color: #6b7280;
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+
+        /* Content Section */
+        .content-section {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 5%;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            border-radius: 25px;
+            padding: 50px 40px;
+            border: 1px solid rgba(0, 0, 0, 0.15);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient);
+            transform: scaleX(0);
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-15px);
+            box-shadow: var(--shadow);
+            border-color: var(--primary-color);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+            color: #ffffff;
+        }
+
+        .service-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .service-description {
+            font-size: 1.05rem;
+            color: #6b7280;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .service-features {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .service-features li {
+            padding: 10px 0;
+            color: #6b7280;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .service-features li i {
+            color: var(--primary-color);
+            font-size: 1.1rem;
+        }
+
+        .service-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 30px;
+            background: var(--gradient);
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .service-btn:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 20px rgba(225, 19, 17, 0.3);
+        }
+
+        /* Pricing Cards */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .pricing-card {
+            background: var(--card-bg);
+            border-radius: 25px;
+            padding: 50px 40px;
+            border: 1px solid rgba(0, 0, 0, 0.15);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .pricing-card.featured {
+            border: 2px solid var(--primary-color);
+            transform: scale(1.05);
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: var(--shadow);
+        }
+
+        .pricing-badge {
+            display: inline-block;
+            padding: 8px 20px;
+            background: var(--gradient);
+            color: #ffffff;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .pricing-title {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .pricing-amount {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .pricing-period {
+            font-size: 1rem;
+            color: #6b7280;
+            margin-bottom: 30px;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 40px;
+            text-align: left;
+        }
+
+        .pricing-features li {
+            padding: 12px 0;
+            color: #6b7280;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .pricing-features li i {
+            color: var(--primary-color);
+        }
+
+        .pricing-btn {
+            display: inline-block;
+            padding: 16px 40px;
+            background: var(--gradient);
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: var(--transition);
+        }
+
+        .pricing-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(225, 19, 17, 0.4);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--card-bg);
+            border-radius: 30px;
+            padding: 80px 60px;
+            text-align: center;
+            margin: 80px auto;
+            max-width: 1000px;
+            border: 1px solid rgba(0, 0, 0, 0.15);
+        }
+
+        .cta-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .cta-text {
+            font-size: 1.2rem;
+            color: #6b7280;
+            margin-bottom: 40px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-btn {
+            padding: 16px 40px;
+            background: var(--gradient);
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(225, 19, 17, 0.4);
+        }
+
+        .cta-btn.whatsapp {
+            background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+        }
+
+        .cta-btn.whatsapp:hover {
+            box-shadow: 0 15px 35px rgba(37, 211, 102, 0.4);
+        }
+
+        /* Footer */
+        .blog-footer {
+            background: var(--card-bg);
+            border-top: 1px solid var(--glass-border);
+            padding: 30px 5%;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+
+            .nav-menu {
+                gap: 15px;
+            }
+
+            .nav-link {
+                padding: 6px 12px;
+                font-size: 0.9rem;
+            }
+
+            .cta-section {
+                padding: 50px 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class='blog-header'>
+        <div class='header-content'>
+            <a class='logo' href='index.html'>Digi<span>yaar</span></a>
+            <nav class='nav-menu'>
+                <a class='nav-link' href='index.html'>Home</a>
+                <a class='nav-link' href='about.html'>About</a>
+                <a class='nav-link active' href='services.html'>Services</a>
+                <a class='nav-link' href='portfolio.html'>Portfolio</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class='hero-section'>
+        <h1 class='hero-title'>Our Services</h1>
+        <p class='hero-subtitle'>
+            Comprehensive digital marketing solutions tailored to skyrocket your online presence and drive real business results.
+        </p>
+    </section>
+
+    <!-- Services Grid -->
+    <section class='content-section'>
+        <div class='services-grid'>
+            <!-- SEO Service -->
+            <div class='service-card'>
+                <div class='service-icon'>
+                    <i class='fas fa-search'></i>
+                </div>
+                <h3 class='service-title'>Search Engine Optimization (SEO)</h3>
+                <p class='service-description'>
+                    Apni website ko Google ke pehle page par laye aur organic traffic exponentially badhaye with our proven SEO strategies.
+                </p>
+                <ul class='service-features'>
+                    <li><i class='fas fa-check-circle'></i> Keyword Research & Analysis</li>
+                    <li><i class='fas fa-check-circle'></i> On-Page SEO Optimization</li>
+                    <li><i class='fas fa-check-circle'></i> Technical SEO Audit</li>
+                    <li><i class='fas fa-check-circle'></i> Link Building</li>
+                    <li><i class='fas fa-check-circle'></i> Monthly Performance Reports</li>
+                </ul>
+                <a class='service-btn' href='https://wa.me/923089207425?text=Hi,%20I%20want%20SEO%20services'>
+                    Get Started <i class='fas fa-arrow-right'></i>
+                </a>
+            </div>
+
+            <!-- Social Media Marketing -->
+            <div class='service-card'>
+                <div class='service-icon'>
+                    <i class='fas fa-hashtag'></i>
+                </div>
+                <h3 class='service-title'>Social Media Marketing</h3>
+                <p class='service-description'>
+                    Facebook, Instagram, LinkedIn par apne brand ki powerful presence banaye aur audience ke sath meaningful connections create karein.
+                </p>
+                <ul class='service-features'>
+                    <li><i class='fas fa-check-circle'></i> Social Media Strategy</li>
+                    <li><i class='fas fa-check-circle'></i> Content Creation & Design</li>
+                    <li><i class='fas fa-check-circle'></i> Community Management</li>
+                    <li><i class='fas fa-check-circle'></i> Paid Advertising Campaigns</li>
+                    <li><i class='fas fa-check-circle'></i> Analytics & Insights</li>
+                </ul>
+                <a class='service-btn' href='https://wa.me/923089207425?text=Hi,%20I%20want%20Social%20Media%20Marketing'>
+                    Get Started <i class='fas fa-arrow-right'></i>
+                </a>
+            </div>
+
+            <!-- Content Marketing -->
+            <div class='service-card'>
+                <div class='service-icon'>
+                    <i class='fas fa-pen-fancy'></i>
+                </div>
+                <h3 class='service-title'>Content Marketing</h3>
+                <p class='service-description'>
+                    Engaging, SEO-optimized content jo aapke audience ko attract kare aur customers mein convert kare.
+                </p>
+                <ul class='service-features'>
+                    <li><i class='fas fa-check-circle'></i> Blog Writing</li>
+                    <li><i class='fas fa-check-circle'></i> Article Creation</li>
+                    <li><i class='fas fa-check-circle'></i> Copywriting</li>
+                    <li><i class='fas fa-check-circle'></i> Email Newsletters</li>
+                    <li><i class='fas fa-check-circle'></i> Content Strategy</li>
+                </ul>
+                <a class='service-btn' href='https://wa.me/923089207425?text=Hi,%20I%20want%20Content%20Marketing'>
+                    Get Started <i class='fas fa-arrow-right'></i>
+                </a>
+            </div>
+
+            <!-- Web Development -->
+            <div class='service-card'>
+                <div class='service-icon'>
+                    <i class='fas fa-code'></i>
+                </div>
+                <h3 class='service-title'>Web Development</h3>
+                <p class='service-description'>
+                    Professional, responsive, aur fast-loading websites jo aapke business ko online powerhouse banaye.
+                </p>
+                <ul class='service-features'>
+                    <li><i class='fas fa-check-circle'></i> Custom Website Design</li>
+                    <li><i class='fas fa-check-circle'></i> WordPress Development</li>
+                    <li><i class='fas fa-check-circle'></i> E-commerce Solutions</li>
+                    <li><i class='fas fa-check-circle'></i> Mobile Responsive Design</li>
+                    <li><i class='fas fa-check-circle'></i> Website Maintenance</li>
+                </ul>
+                <a class='service-btn' href='https://wa.me/923089207425?text=Hi,%20I%20want%20Web%20Development'>
+                    Get Started <i class='fas fa-arrow-right'></i>
+                </a>
+            </div>
+
+            <!-- Paid Advertising -->
+            <div class='service-card'>
+                <div class='service-icon'>
+                    <i class='fas fa-ad'></i>
+                </div>
+                <h3 class='service-title'>Paid Advertising (PPC)</h3>
+                <p class='service-description'>
+                    Google Ads aur Facebook Ads ke through targeted traffic laye aur maximum ROI achieve karein.
+                </p>
+                <ul class='service-features'>
+                    <li><i class='fas fa-check-circle'></i> Google Ads Management</li>
+                    <li><i class='fas fa-check-circle'></i> Facebook/Instagram Ads</li>
+                    <li><i class='fas fa-check-circle'></i> Campaign Optimization</li>
+                    <li><i class='fas fa-check-circle'></i> A/B Testing</li>
+                    <li><i class='fas fa-check-circle'></i> Conversion Tracking</li>
+                </ul>
+                <a class='service-btn' href='https://wa.me/923089207425?text=Hi,%20I%20want%20PPC%20Advertising'>
+                    Get Started <i class='fas fa-arrow-right'></i>
+                </a>
+            </div>
+
+            <!-- Graphic Design -->
+            <div class='service-card'>
+                <div class='service-icon'>
+                    <i class='fas fa-palette'></i>
+                </div>
+                <h3 class='service-title'>Graphic Design</h3>
+                <p class='service-description'>
+                    Eye-catching visuals jo aapke brand ki identity ko define karein aur audience ka attention grab karein.
+                </p>
+                <ul class='service-features'>
+                    <li><i class='fas fa-check-circle'></i> Logo Design</li>
+                    <li><i class='fas fa-check-circle'></i> Social Media Graphics</li>
+                    <li><i class='fas fa-check-circle'></i> Banner/Flyer Design</li>
+                    <li><i class='fas fa-check-circle'></i> Branding Materials</li>
+                    <li><i class='fas fa-check-circle'></i> Infographics</li>
+                </ul>
+                <a class='service-btn' href='https://wa.me/923089207425?text=Hi,%20I%20want%20Graphic%20Design'>
+                    Get Started <i class='fas fa-arrow-right'></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class='content-section'>
+        <h2 style='font-size: 2.5rem; font-weight: 800; text-align: center; margin-bottom: 20px; font-family: Poppins, sans-serif;'>Pricing Plans</h2>
+        <p style='text-align: center; color: #6b7280; font-size: 1.2rem; max-width: 700px; margin: 0 auto 60px;'>
+            Flexible pricing packages designed for businesses of all sizes
+        </p>
+        <div class='pricing-grid'>
+            <!-- Starter Plan -->
+            <div class='pricing-card'>
+                <h3 class='pricing-title'>Starter</h3>
+                <div class='pricing-amount'>PKR 25K</div>
+                <p class='pricing-period'>Per Month</p>
+                <ul class='pricing-features'>
+                    <li><i class='fas fa-check'></i> Basic SEO Optimization</li>
+                    <li><i class='fas fa-check'></i> 2 Social Media Platforms</li>
+                    <li><i class='fas fa-check'></i> 8 Posts per Month</li>
+                    <li><i class='fas fa-check'></i> Basic Analytics Report</li>
+                    <li><i class='fas fa-check'></i> Email Support</li>
+                </ul>
+                <a class='pricing-btn' href='https://wa.me/923089207425?text=Hi,%20I%20want%20Starter%20Plan'>Choose Plan</a>
+            </div>
+
+            <!-- Professional Plan -->
+            <div class='pricing-card featured'>
+                <div class='pricing-badge'>Most Popular</div>
+                <h3 class='pricing-title'>Professional</h3>
+                <div class='pricing-amount'>PKR 50K</div>
+                <p class='pricing-period'>Per Month</p>
+                <ul class='pricing-features'>
+                    <li><i class='fas fa-check'></i> Advanced SEO Strategy</li>
+                    <li><i class='fas fa-check'></i> 4 Social Media Platforms</li>
+                    <li><i class='fas fa-check'></i> 20 Posts per Month</li>
+                    <li><i class='fas fa-check'></i> Detailed Analytics</li>
+                    <li><i class='fas fa-check'></i> Content Creation</li>
+                    <li><i class='fas fa-check'></i> Priority Support</li>
+                </ul>
+                <a class='pricing-btn' href='https://wa.me/923089207425?text=Hi,%20I%20want%20Professional%20Plan'>Choose Plan</a>
+            </div>
+
+            <!-- Enterprise Plan -->
+            <div class='pricing-card'>
+                <h3 class='pricing-title'>Enterprise</h3>
+                <div class='pricing-amount'>Custom</div>
+                <p class='pricing-period'>Tailored Solution</p>
+                <ul class='pricing-features'>
+                    <li><i class='fas fa-check'></i> Complete Digital Strategy</li>
+                    <li><i class='fas fa-check'></i> All Platforms Coverage</li>
+                    <li><i class='fas fa-check'></i> Unlimited Posts</li>
+                    <li><i class='fas fa-check'></i> Advanced Analytics</li>
+                    <li><i class='fas fa-check'></i> Paid Ads Management</li>
+                    <li><i class='fas fa-check'></i> Dedicated Account Manager</li>
+                    <li><i class='fas fa-check'></i> 24/7 Support</li>
+                </ul>
+                <a class='pricing-btn' href='https://wa.me/923089207425?text=Hi,%20I%20want%20Enterprise%20Plan'>Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class='content-section'>
+        <div class='cta-section'>
+            <h2 class='cta-title'>Ready to Elevate Your Digital Presence?</h2>
+            <p class='cta-text'>
+                Let's create a customized digital marketing strategy that drives real results for your business. Contact us today for a free consultation!
+            </p>
+            <div class='cta-buttons'>
+                <a class='cta-btn' href='index.html'>
+                    <i class='fas fa-globe'></i> Visit Website
+                </a>
+                <a class='cta-btn whatsapp' href='https://wa.me/923089207425?text=Hi%20Digiyaar,%20I%20want%20a%20free%20consultation' target='_blank'>
+                    <i class='fab fa-whatsapp'></i> Get Free Consultation
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class='blog-footer'>
+        <p>&copy; 2026 Digiyaar Digital Marketing Agency. All rights reserved.</p>
+    </footer>
+</body>
+</html>
